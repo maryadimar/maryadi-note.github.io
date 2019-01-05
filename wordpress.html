@@ -82,43 +82,91 @@
                                             </p>
                                         </div><!--//content-->
                                     </div>
+                                    <p>
+                                        setelah terinstal berikut perintah untuk mengendalikan apache2.
+                                    </p>
+                                    <div class="callout-block callout-warning">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-bug"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">ketikan perintah berikut</h4>
+                                            <p>
+                                                sudo systemctl stop apache2.service >> ( menghentikan proses apache ) <br>
+                                                sudo systemctl start apache2.service >> ( memulai apache ) <br>
+                                                sudo systemctl enable apache2.service >> ( mengaktifkan apache )
+                                            </p>
+                                        </div><!--//content-->
+                                    </div>
                                 </div><!--//section-block-->
                                 <div id="step2"  class="section-block">
-                                    <h3 class="block-title">Step Two</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                                    <h3 class="block-title">Step Two : Install MariaDB Database Server</h3>
+                                    <p>
+                                        Untuk menyimpan database kita gunakan MariaDB. Untuk menginstalnya jalankan perintah di bawah ini :
                                     </p>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
-                                            <h6>Un-ordered list example</h6>
-                                            <ul class="list">
-        										<li>Lorem ipsum dolor sit amet.</li>
-        										<li>Aliquam tincidunt mauris.</li>
-        										<li>Ultricies eget vel aliquam libero.
-        											<ul>
-        												<li>Turpis pulvinar</li>
-        												<li>Feugiat scelerisque</li>
-        												<li>Ut tincidunt</li>
-        											</ul>
-        										</li>
-        										<li>Pellentesque habitant morbi.</li>
-        										<li>Praesent dapibus, neque id.</li>
-        									</ul>
+                                    <div class="callout-block callout-warning">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-bug"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">ketikan perintah berikut</h4>
+                                            <p>
+                                                sudo apt-get install mariadb-server mariadb-client
+                                            </p>
                                         </div>
-                                        <div class="col-md-6 col-12">
-                                            <h6>Ordered list example</h6>
-                                            <ol class="list">
-        										<li>Lorem ipsum dolor sit amet.</li>
-        										<li>Aliquam tincidunt mauris.</li>
-        										<li>Ultricies eget vel aliquam libero.
-        											<ul>
-        												<li>Turpis pulvinar</li>
-        												<li>Feugiat scelerisque</li>
-        												<li>Ut tincidunt</li>
-        											</ul>
-        										</li>
-        										<li>Pellentesque habitant morbi.</li>
-        										<li>Praesent dapibus, neque id.</li>
-        									</ol>
+                                    </div>
+                                    <p>
+                                        berikut perintah untuk mengendalikan mariaDB, sama halnya seperti proses apache pada step one : 
+                                    </p>
+                                    <div class="callout-block callout-warning">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-bug"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">ketikan perintah berikut</h4>
+                                            <p>
+                                                sudo systemctl stop mariadb.service <br> 
+                                                sudo systemctl start mariadb.service <br>
+                                                sudo systemctl enable mariadb.service 
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p>
+                                         Setelah itu, jalankan perintah di bawah ini untuk mengamankan server MariaDB dengan membuat kata sandi root dan melarang akses root jarak jauh.
+                                    </p>
+                                    <div class="callout-block callout-warning">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-bug"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">ketikan perintah berikut</h4>
+                                            <p>
+                                                sudo mysql_secure_installation
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        ikuti tahap-tahapnya
+                                    </p>
+                                    <ul class="list">
+                                        <li>Enter current password for root (enter for none): Just press the Enter</li>
+                                        <li>Set root password? [Y/n]: Y</li>
+                                        <li>New password: Enter password</li>
+                                        <li>Re-enter new password: Repeat password</li>
+                                        <li>Remove anonymous users? [Y/n]: Y</li>
+                                        <li>Disallow root login remotely? [Y/n]: Y</li>
+                                        <li>Remove test database and access to it? [Y/n]:  Y</li>
+                                        <li>Reload privilege tables now? [Y/n]:  Y</li>
+                                    </ul>
+                                    <div class="callout-block callout-warning">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-bug"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">restart MariaDB</h4>
+                                            <p>
+                                                sudo systemctl restart mariadb.service
+                                            </p>
                                         </div>
                                     </div><!--//row-->
                                 </div><!--//section-block-->
