@@ -60,7 +60,7 @@
                                     <p>
                                         WordPress adalah sebuah aplikasi sumber terbuka (open source) yang sangat populer digunakan sebagai mesin blog (blog engine). WordPress dibangun dengan bahasa pemrograman PHP dan basis data (database) MySQL. PHP dan MySQL, keduanya merupakan perangkat lunak sumber terbuka (open source software). Selain sebagai blog, WordPress juga mulai digunakan sebagai sebuah CMS (Content Management System) karena kemampuannya untuk dimodifikasi dan disesuaikan dengan kebutuhan penggunanya. WordPress adalah penerus resmi dari b2/cafelog yang dikembangkan oleh Michel Valdrighi. Nama WordPress diusulkan oleh Christine Selleck, teman Matt Mullenweg. WordPress saat ini menjadi platform content management system (CMS) bagi beberapa situs web ternama seperti CNN, Reuters, The New York Times, TechCrunch, dan lainnya.
                                   (Install WordPress On Ubuntu 18.04 LTS With Apache2, MariaDB And PHP 7.1)
-				    </p>
+				                    </p>
                                     <a href="https://wordpress.org/download/" class="btn btn-green" target="_blank"><i class="fas fa-download"></i> Download wordpress</a>
                                 </div>
                             </section><!--//doc-section-->
@@ -237,12 +237,66 @@
                                         <div class="content">
                                             <h4 class="callout-title">gunakan CTRL + W untuk memudahkan pencarian (jika open menggunakan terminal):</h4>
                                             <p>
-                                                file_uploads = On
-                                                allow_url_fopen = On
-                                                memory_limit = 256M
-                                                upload_max_filesize = 100M
-                                                max_execution_time = 360
+                                                file_uploads = On <br>
+                                                allow_url_fopen = On <br>
+                                                memory_limit = 256M <br>
+                                                upload_max_filesize = 100M <br>
+                                                max_execution_time = 360 <br>
                                                 date.timezone = Asia/Jakarta
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="step4"  class="section-block">
+                                    <h3 class="block-title">Step Four : Membuat Database</h3>
+                                    <p>
+                                        Login terlebih dulu ke MariDB Server 
+                                    </p>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-bug"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">ketikan perintah berikut</h4>
+                                            <p>
+                                                $ sudo mysql -u root -p 
+                                            </p>
+                                        </div>
+                                        <p>
+                                            Kemudian buat database 
+                                        </p>
+                                        <div class="content">
+                                            <h4 class="callout-title">ketikan perintah berikut</h4>
+                                            <p>
+                                                $ CREATE DATABASE wpdb; 
+                                            </p>
+                                        </div>
+                                        <p>
+                                            Set password 
+                                        </p>
+                                        <div class="content">
+                                            <h4 class="callout-title">ketikan perintah berikut</h4>
+                                            <p>
+                                                $ CREATE USER 'wpdbuser'@'localhost' IDENTIFIED BY 'silahkan_isi_passwordnya';
+                                            </p>
+                                        </div>
+                                        <p>
+                                            Kemudian beri pengguna akses penuh ke database
+                                        </p>
+                                        <div class="content">
+                                            <h4 class="callout-title">ketikan perintah berikut</h4>
+                                            <p>
+                                                $ GRANT ALL ON wpdb.* TO 'wpdbuser'@'localhost' IDENTIFIED BY 'silahkan_isi_passwordnya' WITH GRANT OPTION;
+                                            </p>
+                                        </div>
+                                        <p>
+                                            Terakhir, simoan perubahan dan simpan
+                                        </p>
+                                        <div class="content">
+                                            <h4 class="callout-title">ketikan perintah berikut</h4>
+                                            <p>
+                                                $ FLUSH PRIVILEGES; <br>
+                                                EXIT;
                                             </p>
                                         </div>
                                     </div>
@@ -625,6 +679,12 @@ echo $y;
                                         <a class="nav-link scrollto" href="#step1">Step One</a>
                                         <a class="nav-link scrollto" href="#step2">Step Two</a>
                                         <a class="nav-link scrollto" href="#step3">Step Three</a>
+                                        <a class="nav-link scrollto" href="#step4">Step Four</a>
+                                        <a class="nav-link scrollto" href="#step5">Step Five</a>
+                                        <a class="nav-link scrollto" href="#step6">Step Six</a>
+                                        <a class="nav-link scrollto" href="#step7">Step Seven</a>
+                                        <a class="nav-link scrollto" href="#step8">Step Eight</a>
+                                        <a class="nav-link scrollto" href="#step9">Step Nine</a>
                                     </nav><!--//nav-->
 	                                <a class="scrollto" href="#code-section">Code</a>
                                     <nav class="doc-sub-menu nav flex-column">
