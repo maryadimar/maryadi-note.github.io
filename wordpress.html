@@ -248,38 +248,45 @@
                                     </div>
                                 </div>
                                 <div id="step4"  class="section-block">
-                                    <h3 class="block-title">Step Four : Membuat Database</h3>
+                                    <div class="callout-block callout-info">
+                                        <h3 class="block-title">Step Four : Membuat Database</h3>
+                                        <p>
+                                            Login terlebih dulu ke MariDB Server 
+                                        </p>
+                                        <div class="callout-block callout-info">
+                                            <div class="icon-holder">
+                                                <i class="fas fa-bug"></i>
+                                            </div><!--//icon-holder-->
+                                            <div class="content">
+                                                <h4 class="callout-title">ketikan perintah berikut</h4>
+                                                <p>
+                                                    $ sudo mysql -u root -p 
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <p>
-                                        Login terlebih dulu ke MariDB Server 
+                                        Kemudian buat database 
                                     </p>
                                     <div class="callout-block callout-info">
-                                        <div class="icon-holder">
-                                            <i class="fas fa-bug"></i>
-                                        </div><!--//icon-holder-->
-                                        <div class="content">
-                                            <h4 class="callout-title">ketikan perintah berikut</h4>
-                                            <p>
-                                                $ sudo mysql -u root -p 
-                                            </p>
-                                        </div>
-                                        <p>
-                                            Kemudian buat database 
-                                        </p>
                                         <div class="content">
                                             <h4 class="callout-title">ketikan perintah berikut</h4>
                                             <p>
                                                 $ CREATE DATABASE wpdb; 
                                             </p>
                                         </div>
-                                        <p>
-                                            Set password 
-                                        </p>
+                                    </div>
+                                    <p>
+                                        Set password 
+                                    </p>
+                                    <div class="callout-block callout-info">
                                         <div class="content">
                                             <h4 class="callout-title">ketikan perintah berikut</h4>
                                             <p>
                                                 $ CREATE USER 'wpdbuser'@'localhost' IDENTIFIED BY 'silahkan_isi_passwordnya';
                                             </p>
                                         </div>
+                                    </div>
                                         <p>
                                             Kemudian beri pengguna akses penuh ke database
                                         </p>
@@ -299,7 +306,7 @@
                                                 EXIT;
                                             </p>
                                         </div>
-                                    </div>
+                                    
                                 </div><!--//section-block-->
                             </section><!--//doc-section-->
                             
