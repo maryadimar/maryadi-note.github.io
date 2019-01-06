@@ -374,14 +374,14 @@
                                     <p>
                                         Kemudian salin dan tempel konten di bawah ini ke dalam file dan simpan. Ganti baris yang disorot dengan nama domain dan lokasi root direktori Anda sendiri. 
                                     </p>
-                                    <div class="callout-block callout-info">
+                                    <div class="callout-block callout-success">
                                         <div class="icon-holder">
                                             <i class="fas fa-bug"></i>
                                         </div>
                                         <div class="content">
                                             <h4 class="callout-title">ketikan perintah berikut</h4>
                                             <p>
-                                                <VirtualHost *:80> <br>
+                                                &lt;VirtualHost *:80&gt; <br>
                                                      ServerAdmin admin@example.com <br>
                                                      DocumentRoot /var/www/html/wordpress/ <br>
                                                      ServerName example.com <br>
@@ -396,7 +396,7 @@
                                                      ErrorLog ${APACHE_LOG_DIR}/error.log <br>
                                                      CustomLog ${APACHE_LOG_DIR}/access.log combined
                                                     <br>    
-                                                </VirtualHost> 
+                                                &lt;/VirtualHost&gt; 
                                             </p>
                                         </div>
                                     </div>
