@@ -320,6 +320,89 @@
                                             </p>
                                         </div>
                                     </div>
+                                </div>
+                                <div id="step5"  class="section-block">
+                                    <h3 class="block-title">Step 5 : download Wordpress terbaru</h3>
+                                    <p>
+                                        Silahkan kunjungi situs resmi wordpress untuk mengunduh, jika sudah silahkan lakukan perintah berikut. 
+                                    </p>
+                                    <div class="callout-block callout-success">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-bug"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">ketikan perintah berikut</h4>
+                                            <p>
+                                                $ cd /tmp && wget https://wordpress.org/latest.tar.gz <br>
+                                                $ tar -zxvf latest.tar.gz <br>
+                                                $ sudo mv wordpress /var/www/html/wordpress
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        Kemudian jalankan perintah di bawah ini untuk mengatur izin yang benar agar WordPress berfungsi. 
+                                    </p>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-bug"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">ketikan perintah berikut</h4>
+                                            <p>
+                                                $ sudo chown -R www-data:www-data /var/www/html/wordpress/ <br>
+                                                $ sudo chmod -R 755 /var/www/html/wordpress/ 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="step6"  class="section-block">
+                                    <h3 class="block-title">Step 6 : Konfigurasi Apache2</h3>
+                                    <p>
+                                         Terakhir, konfigurasikan file konfigurasi situs Apahce2 untuk WordPress. Untuk mengontrol bagaimana pengguna mengakses konten WordPress. Jalankan perintah di bawah ini untuk membuat file konfigurasi baru bernama wordpress.conf
+                                    </p>
+                                    <div class="callout-block callout-success">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-bug"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">ketikan perintah berikut</h4>
+                                            <p>
+                                                $ sudo nano /etc/apache2/sites-available/wordpress.conf
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        Kemudian salin dan tempel konten di bawah ini ke dalam file dan simpan. Ganti baris yang disorot dengan nama domain dan lokasi root direktori Anda sendiri. 
+                                    </p>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-bug"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">ketikan perintah berikut</h4>
+                                            <p>
+                                                <VirtualHost *:80> <br>
+                                                     ServerAdmin admin@example.com <br>
+                                                     DocumentRoot /var/www/html/wordpress/ <br>
+                                                     ServerName example.com <br>
+                                                     ServerAlias www.example.com <br>
+
+                                                     <Directory /var/www/html/wordpress/> <br>
+                                                        Options +FollowSymlinks <br>
+                                                        AllowOverride All <br>
+                                                        Require all granted <br>
+                                                     </Directory> <br>
+
+                                                     ErrorLog ${APACHE_LOG_DIR}/error.log <br>
+                                                     CustomLog ${APACHE_LOG_DIR}/access.log combined
+                                                    <br>    
+                                                </VirtualHost> 
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        Simpan file and exit.
+                                    </p>
                                 </div><!--//section-block-->
                             </section><!--//doc-section-->
                             
